@@ -16,15 +16,15 @@
         (println "Invalid choice. Try again.")
         (recur)))))                                         ;; recursive call to the user to give a valid input
 
-(rand-int 30)
-
+(defn get-secret-number []
+  (+ (rand-int 100) 1))
 
 (defn -main [& args]
-  ;; print welcome message
   (welcome-message)
-  ;; select random number
-  ;; user input - select difficulty
-  (select-difficulty)
+  (let [{:keys [level chances]} (select-difficulty)
+        secret-number (get-secret-number)]
+    )
+
   ;; game loop:
   ;;   Enter your guess: <user input>
   ;;   wrong:
