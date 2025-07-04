@@ -23,6 +23,8 @@
   (welcome-message)
   (let [{:keys [level chances]} (select-difficulty)
         secret-number (get-secret-number)]
+    (println "Great! You've choosen difficulty level:" (name level))
+    (println "You have" chances "chances. Good luck!")
     )
 
   ;; game loop:
