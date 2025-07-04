@@ -6,7 +6,17 @@
   )
 
 (defn select-difficulty []
-  (println "Please select the difficulty level:\n1. Easy (10 chances)\n2. Medium (5 chances)\n3. Hard (3 chances)\n"))
+  (println "Please select the difficulty level:\n1. Easy (10 chances)\n2. Medium (5 chances)\n3. Hard (3 chances)\n")
+  (let [difficulty (read-line)]
+    (case difficulty
+      "1" {:level :easy :chances 10}
+      "2" {:level :medium :chances 5}
+      "3" {:level :hard :chances 3}
+      (do
+        (println "Invalid choice. Try again.")
+        (recur)))))                                         ;; recursive call to the user to give a valid input
+
+(rand-int 30)
 
 
 (defn -main [& args]
